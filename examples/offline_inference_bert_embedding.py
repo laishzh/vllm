@@ -2,9 +2,9 @@ from vllm import LLM
 
 # Sample prompts.
 prompts = [
-    # "This is an example sentence.",
+    "This is an example sentence.",
     # "Another sentence.",
-    "今天天气怎么样？好一些了吧？"
+    # "今天天气怎么样？好一些了吧？"
 ]
 
 # Create an LLM.

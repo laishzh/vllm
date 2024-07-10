@@ -10,13 +10,17 @@ print(model)
 
 print("Parameter: ")
 for name, weight in model.named_parameters():
-    print(f"Name: {name}".ljust(60) + f"Weight: {weight.shape}".ljust(40) + f"dtype: {weight.dtype}".ljust(20))
+    print(f"Name: {name}".ljust(60) + f"Weight: {weight.shape}".ljust(40) +
+          f"dtype: {weight.dtype}".ljust(20))
 
+sentence = "This is an example sentence."
+# sentence = "Another sentence."
 
-# sentence = "This is an example sentence."
-sentence = "Another sentence."
-
-inputs = tokenizer(sentence, return_tensors='pt', truncation=True, padding='max_length', max_length=128)
+inputs = tokenizer(sentence,
+                   return_tensors='pt',
+                   truncation=True,
+                   padding='max_length',
+                   max_length=128)
 
 with torch.no_grad():
     outputs = model(**inputs)
